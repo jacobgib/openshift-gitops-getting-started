@@ -30,7 +30,7 @@ spec:
             path: /
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 45
+          initialDelaySeconds: 46
           periodSeconds: 10
           successThreshold: 1
           timeoutSeconds: 1
