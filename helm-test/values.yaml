@@ -1,0 +1,7 @@
+meta:
+  alertName: HelmArgoTest
+prometheus:
+  description: Testing ArgoCd Helm deployment
+  title: ArgoCD Helm Rule Test
+  severity: critical
+  

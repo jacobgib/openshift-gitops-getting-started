@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: argocd-deploy-test
+  namespace: argocd-app-test
+spec:
+  groups:
+  - name: argocd-deploy-test-alert
+    rules:
+    - alert: {{ .Values.meta.alertName }}
+      annotations:
+        description: {{ .Values.prometheus.description }}
+        message: This is a test to verify ArgoCD can push cluster config changes
+        title: {{ .Values.prometheus.title }}
+      expr: kube_job_failed{namespace="etcd-backup", job_name=~"backup-.*"} != 0
+      labels:
+        severity: {{ .Values.prometheus.severity }}
