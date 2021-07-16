@@ -14,4 +14,4 @@ spec:
         title: ArgoCd deploy Alert Test
       expr: kube_job_failed{namespace="etcd-backup", job_name=~"backup-.*"} != 0
       labels:
-        severity: critical
+        severity: warning
